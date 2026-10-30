@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+data/
+runs/
+*.log
+# Model weights and demonstration datasets are distributed through Google Drive.
+*.pth
+*.pt
+weights/*
+!weights/README.md
+!weights/manifest.json

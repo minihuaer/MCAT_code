@@ -1,0 +1,22 @@
+{
+  "kdu_final2.pth": {
+    "status": "included",
+    "bytes": 11359674,
+    "sha256": "65fd65631859da63a4744ea8e08af5d3589e0b4d2076d2dfe65311030c4abc96"
+  },
+  "hand_landmarker.task": {
+    "status": "included",
+    "bytes": 7819105,
+    "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+  },
+  "yolov8n.pt": {
+    "status": "included",
+    "bytes": 6534387,
+    "sha256": "31e20dde3def09e2cf938c7be6fe23d9150bbbe503982af13345706515f2ef95"
+  },
+  "abest_model_152_80.1034-lite.pth": {
+    "status": "included",
+    "bytes": 236547452,
+    "sha256": "e9e27a76137a3676bafd9e1f745fdc5c46bb43c8de69ce3c535554a8aab48ded"
+  }
+}

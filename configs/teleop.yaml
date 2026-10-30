@@ -1,0 +1,63 @@
+# Replace intrinsics with the calibration of the interaction camera.
+camera:
+  source: 0
+  focal: [630.234928, 627.647742]
+  principal: [310.815142, 239.667876]
+  depth_scale_mm: 2000.0
+  root_depth_mm: 1700.0
+  depth_tilt: 0.00016541685046316718  # (-4.5e-2)/(-2.7204e2)
+weights:
+  pose: weights/abest_model_152_80.1034-lite.pth
+  kdu: weights/kdu_final2.pth
+  detector: weights/yolov8n.pt
+  hands: weights/hand_landmarker.task
+kdu_config: configs/KDU_final2.yaml
+device: auto
+pose:
+  resnet: 152
+  joints: 18
+  input_height: 384
+  input_width: 288
+detection:
+  image_size: 320
+  confidence: 0.3
+  anchor_threshold_px: 1.0
+  anchor_stable_frames: 60
+hands:
+  presence_confidence: 0.1
+  freshness_ms: 120
+  gripper_hold_ms: 320
+# Gripper state-machine parameters. The confidence argument is stored
+# but is not used as a gate by HandStateManager.update().
+gripper:
+  confidence_threshold: 0.83
+  frame_threshold: 2
+  open: 0.1
+  close: 0.04
+awopt:
+  estimation_window: 120
+  output_window: 5
+  regularization: 0.001
+  depth_regularization: 0.1
+  excitation_threshold: 0.0001
+  scale_min: 0.5
+  scale_max: 2.0
+  shoulder_decay: 0.5
+  elbow_decay: 0.5
+  rho_min: 0.1
+  rho_max: 2.0
+  motion_sensitivity: 0.02
+ros:
+  node: mcat_teleoperation
+  left_command: /piper_left/pin_pos_cmd
+  right_command: /piper_right/pin_pos_cmd
+# Root-relative camera XYZ (mm) -> robot [-Z, X, -Y] (m), then affine mapping.
+mapping:
+  gain: [1.4285714285714286, 2.0, 1.25]
+  offset_right: [-0.10714285714285715, 0.5, -0.09375]
+  offset_left: [-0.10714285714285715, -0.5, -0.09375]
+  lower: [0.02, -0.4, 0.12]
+  upper: [0.5, 0.4, 0.7]
+  height_threshold: 0.3
+  radial_min: 0.12
+  radial_max: 0.58

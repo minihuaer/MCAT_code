@@ -1,0 +1,23 @@
+# Python 3.9. Install the matching PyTorch CUDA/CPU wheels first (docs/ENVIRONMENT.md).
+torch==2.3.1
+torchvision==0.18.1
+numpy==1.26.4
+PyYAML==6.0.2
+easydict==1.13
+# Upstream YOLO/MediaPipe require these two distribution names. Match versions.
+opencv-python==4.10.0.84
+opencv-contrib-python==4.10.0.84
+mediapipe==0.10.14
+ultralytics==8.3.0
+# Pin the JAX/protobuf dependencies used by MediaPipe.
+jax==0.4.30
+jaxlib==0.4.30
+protobuf==4.25.5
+scipy==1.13.1
+matplotlib==3.8.4
+pandas==2.2.2
+seaborn==0.13.2
+# ROS Python support; rospy and generated messages come from the sourced ROS workspace.
+rospkg==1.5.1
+catkin-pkg==1.0.0
+empy==3.3.4

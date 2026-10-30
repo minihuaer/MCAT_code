@@ -1,0 +1,23 @@
+{
+  "fps": 30,
+  "width": 320,
+  "height": 240,
+  "camera": "/dev/video2",
+  "max_age_s": 0.2,
+  "max_command_age_s": 0.5,
+  "max_skew_s": 0.15,
+  "max_lateness_s": 0.0333333333,
+  "joint_names": ["joint0", "joint1", "joint2", "joint3", "joint4", "joint5", "joint6"],
+  "topics": {
+    "left_pose": {"topic": "/piper_left/end_pose", "type": "geometry_msgs/Pose"},
+    "right_pose": {"topic": "/piper_right/end_pose", "type": "geometry_msgs/Pose"},
+    "left_joints": {"topic": "/piper_left/joint_states_single", "type": "sensor_msgs/JointState"},
+    "right_joints": {"topic": "/piper_right/joint_states_single", "type": "sensor_msgs/JointState"},
+    "left_command": {"topic": "/piper_left/pin_pos_cmd", "type": "piper_msgs/PosCmd"},
+    "right_command": {"topic": "/piper_right/pin_pos_cmd", "type": "piper_msgs/PosCmd"},
+    "left_status": {"topic": "/piper_left/arm_status", "type": "piper_msgs/PiperStatusMsg"},
+    "right_status": {"topic": "/piper_right/arm_status", "type": "piper_msgs/PiperStatusMsg"},
+    "left_joint_command": {"topic": "/piper_left/joint_ctrl_single", "type": "sensor_msgs/JointState"},
+    "right_joint_command": {"topic": "/piper_right/joint_ctrl_single", "type": "sensor_msgs/JointState"}
+  }
+}

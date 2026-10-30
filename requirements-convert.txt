@@ -1,0 +1,2 @@
+# Separate Python 3.10 environment: do not install into the teleoperation environment.
+lerobot==0.4.4
